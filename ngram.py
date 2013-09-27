@@ -48,7 +48,6 @@ class NGRAM:
         for token in cups.keys():
             print "key %s : nextword %s" %(token,cups[token].next_word)
 
-
     @staticmethod
     def topword(n,cup):
         """ A function that picks the top words in a cup. I realized I could've just randomly picked from a list of words
@@ -60,7 +59,6 @@ class NGRAM:
             return choice(temp[:n]) # random element from the temp list
         else:
             return ""
-
 
     @staticmethod
     def generate(order, filename, number_of_words):
@@ -98,7 +96,7 @@ class NGRAM:
         """Generate words based on a string"""
         string = re.sub('[,\.?"-\'!:;]','',string)
         cups = {}
-        cups = NGRAM.make_cups(order,string)
+        cups = NGRAM.make_cups(order, string)
         first_token = choice(cups.keys()) # random first token
         this_token = first_token
         generated_words = []
