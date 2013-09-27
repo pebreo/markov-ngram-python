@@ -49,10 +49,10 @@ class NGRAM:
 
     @staticmethod
     def topword(n,cup):
-        """ A function that picks the top words in a cup. I realized I could've just randomly picked from a list of words
+        """A function that picks the top words in a cup. I realized I could've just randomly picked from a list of words
             but instead a made a Counter() object of words to keep track of them
         """
-        # reverse sort based on values
+        # Reverse sort based on values
         temp = list(reversed(sorted(cup.next_word,key=cup.next_word.get)))
         if len(temp[:n]) > 0:
             return choice(temp[:n]) # random element from the temp list
@@ -61,10 +61,10 @@ class NGRAM:
 
     @staticmethod
     def generate(order, filename, number_of_words):
-        """ Generate words based on a text file
+        """Generate words based on a text file
             Usage: Ngram.generate_from_file(order=2,'sample-sal.txt')
         """
-        # put file in one big string
+        # Put file in one big string
         with open(filename,'r') as f:
             string = f.read()
 
@@ -103,7 +103,7 @@ class NGRAM:
         next_word = "" # first next_word is blank
 
         for i in range(1,number_of_words):
-            # if the name of the token exists
+            # If the name of the token exists
             if cups.has_key(this_token):
                 next_word = NGRAM.topword(2,cups[this_token])
             else:
