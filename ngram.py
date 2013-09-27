@@ -41,7 +41,6 @@ class NGRAM:
                 cups[tuple(token)].add_next_word(next_word)
         return cups
 
-
     @staticmethod
     def print_cups(cups):
         """You can use this to see what cups there are and the words inside of it """
