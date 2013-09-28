@@ -20,3 +20,15 @@ s heir to tis a consummation devoutly to be wishd To die to sleep no more and by
 
 
 ```
+
+Bugs
+----
+I need to diagnose and fix the following error:
+```
+>>> NGRAM.generate(2, 'sample-hamlet.txt', 200)                                                                                                                                                                                                
+Traceback (most recent call last):                                                                                                                                                                                                             
+  File "<stdin>", line 1, in <module>                                                                                                                                                                                                          
+  File "ngram.py", line 83, in generate                                                                                                                                                                                                        
+    next_word = NGRAM.topword(1, cups[this_token])                                                                                                                                                                                             
+KeyError: ('something', 'after')                                                                                                                                                                                                               
+```
